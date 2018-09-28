@@ -28,7 +28,7 @@
 		var mode = document.documentMode || 0;
 		var setExpr = $.isFunction( document.createElement('div').style.setExpression );
 
-		// global $ methods for blocking/unblocking the entire page
+		// global $ methods for blocking/unblocking the entire Page
 		$.blockUI   = function(opts) { install(window, opts); };
 		$.unblockUI = function(opts) { remove(window, opts); };
 
@@ -182,7 +182,7 @@
 			baseZ: 1000,
 
 			// set these to true to have the message automatically centered
-			centerX: true, // <-- only effects element blocking (page block controlled via css above)
+			centerX: true, // <-- only effects element blocking (Page block controlled via css above)
 			centerY: true,
 
 			// allow body element to be stetched in ie6; this makes blocking look better
@@ -209,7 +209,7 @@
 			showOverlay: true,
 
 			// if true, focus will be placed in the first available input field when
-			// page blocking
+			// Page blocking
 			focusInput: true,
 
             // elements that can receive focus
@@ -223,7 +223,7 @@
 			onBlock: null,
 
 			// callback method invoked when unblocking has completed; the callback is
-			// passed the element that has been unblocked (which is the window object for page
+			// passed the element that has been unblocked (which is the window object for Page
 			// blocks) and the options that were passed to the unblock call:
 			//	onUnblock(element, options)
 			onUnblock: null,

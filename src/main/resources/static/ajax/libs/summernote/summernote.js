@@ -5183,7 +5183,7 @@
      * set focus
      */
     this.focus = function () {
-      // [workaround] Screen will move when page is scolled in IE.
+      // [workaround] Screen will move when Page is scolled in IE.
       //  - do focus when not focused
       if (!this.hasFocus()) {
         $editable.focus();

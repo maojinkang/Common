@@ -31,7 +31,7 @@
         jspdf: {
           orientation:  'p',
           unit:         'pt',
-          format:       'a4',             // jspdf page format or 'bestfit' for autmatic paper format selection
+          format:       'a4',             // jspdf Page format or 'bestfit' for autmatic paper format selection
           margins:      {left: 20, right: 10, top: 10, bottom: 10},
           onDocCreated: null,
           autotable: {

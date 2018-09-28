@@ -319,7 +319,7 @@ $.layout = {
 ,	onLoad:		[]	// runs after layout container and global events init, but before initPanes is called
 ,	onReady:	[]	// runs after initialization *completes* - ie, after initPanes completes successfully
 ,	onDestroy:	[]	// runs after layout is destroyed
-,	onUnload:	[]	// runs after layout is destroyed OR when page unloads
+,	onUnload:	[]	// runs after layout is destroyed OR when Page unloads
 ,	afterOpen:	[]	// runs after setAsOpen() completes
 ,	afterClose:	[]	// runs after setAsClosed() completes
 
@@ -665,7 +665,7 @@ $.layout = {
 		};
 	;
 	if (b) lb[b] = true; // set CURRENT browser
-	/*	OLD versions of jQuery only set $.support.boxModel after page is loaded
+	/*	OLD versions of jQuery only set $.support.boxModel after Page is loaded
 	 *	so if this is IE, use support.boxModel to test for quirks-mode (ONLY IE changes boxModel) */
 	if (!bm && !cm) $(function(){ lb.boxModel = $s.boxModel; });
 })();
@@ -680,7 +680,7 @@ $.layout.defaults = {
 	name:						""			// Not required, but useful for buttons and used for the state-cookie
 ,	containerClass:				"ui-layout-container" // layout-container element
 ,	inset:						null		// custom container-inset values (override padding)
-,	scrollToBookmarkOnLoad:		true		// after creating a layout, scroll to bookmark in URL (.../page.htm#myBookmark)
+,	scrollToBookmarkOnLoad:		true		// after creating a layout, scroll to bookmark in URL (.../Page.htm#myBookmark)
 ,	resizeWithWindow:			true		// bind thisLayout.resizeAll() to the window.resize event
 ,	resizeWithWindowDelay:		50			// delay calling resizeAll because makes window resizing very jerky
 ,	resizeWithWindowMaxDelay:	0			// 0 = none - force resize every XX ms while window is being resized
@@ -1917,7 +1917,7 @@ $.fn.layout = function (opts) {
 				};
 			}
 
-			// format html & body if this is a full page layout
+			// format html & body if this is a full Page layout
 			if (sC.isBody) {
 				// if HTML has padding, use this as an outer-spacing around BODY
 				if (!o.outset) {
@@ -3014,7 +3014,7 @@ $.fn.layout = function (opts) {
 		if ($N.data(css) && !$N.data("layoutRole")) // RESET CSS
 			$N.css( $N.data(css) ).removeData(css);
 
-		// for full-page layouts, also reset the <HTML> CSS
+		// for full-Page layouts, also reset the <HTML> CSS
 		if (sC.tagName === "BODY" && ($N = $("html")).data(css)) // RESET <HTML> CSS
 			$N.css( $N.data(css) ).removeData(css);
 
@@ -3222,7 +3222,7 @@ $.fn.layout = function (opts) {
 			s.isHidden  = true;
 			s.isVisible = false;
 			if (!state.initialized)
-				_hidePane(pane); // no animation when loading page
+				_hidePane(pane); // no animation when loading Page
 			sizeMidPanes(_c[pane].dir === "horz" ? "" : "center");
 			if (state.initialized || o.triggerEventsOnLoad)
 				_runCallbacks("onhide_end", pane);
@@ -5282,7 +5282,7 @@ $.layout.plugins.stateManagement = true;
 //	Add State-Management options to layout.defaults
 $.layout.defaults.stateManagement = {
 	enabled:		false	// true = enable state-management, even if not using cookies
-,	autoSave:		true	// Save a state-cookie when page exits?
+,	autoSave:		true	// Save a state-cookie when Page exits?
 ,	autoLoad:		true	// Load the state-cookie when Layout inits?
 ,	animateLoad:	true	// animate panes when loading state into an active layout
 ,	includeChildren: true	// recurse into child layouts to include their state as well
@@ -5293,7 +5293,7 @@ $.layout.defaults.stateManagement = {
 ,	cookie: {
 		name:	""	// If not specified, will use Layout.name, else just "Layout"
 	,	domain:	""	// blank = current domain
-	,	path:	""	// blank = current page, "/" = entire website
+	,	path:	""	// blank = current Page, "/" = entire website
 	,	expires: ""	// 'days' to keep cookie - leave blank for 'session cookie'
 	,	secure:	false
 	}

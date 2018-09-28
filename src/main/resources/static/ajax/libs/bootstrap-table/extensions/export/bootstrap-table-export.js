@@ -94,7 +94,7 @@
                         };
 
                     if (that.options.exportDataType === 'all' && that.options.pagination) {
-                        that.$el.one(that.options.sidePagination === 'server' ? 'post-body.bs.table' : 'page-change.bs.table', function () {
+                        that.$el.one(that.options.sidePagination === 'server' ? 'post-body.bs.table' : 'Page-change.bs.table', function () {
                             doExport();
                             that.togglePagination();
                         });

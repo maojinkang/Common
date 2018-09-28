@@ -94,7 +94,7 @@ function createMenuItem(dataUrl, menuName) {
         if ($(this).data('id') == dataUrl) {
             if (!$(this).hasClass('active')) {
                 $(this).addClass('active').siblings('.menuTab').removeClass('active');
-                $('.page-tabs-content').animate({ marginLeft: ""}, "fast");
+                $('.Page-tabs-content').animate({ marginLeft: ""}, "fast");
                 // 显示tab对应的内容区
                 $('.mainContent .RuoYi_iframe', topWindow).each(function() {
                     if ($(this).data('id') == dataUrl) {
@@ -117,7 +117,7 @@ function createMenuItem(dataUrl, menuName) {
         $('.mainContent', topWindow).find('iframe.RuoYi_iframe').hide().parents('.mainContent').append(str1);
 
         // 添加选项卡
-        $('.menuTabs .page-tabs-content', topWindow).append(str);
+        $('.menuTabs .Page-tabs-content', topWindow).append(str);
     }
     return false;
 }

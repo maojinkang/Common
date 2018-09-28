@@ -93,13 +93,13 @@ $(function() {
         var visibleWidth = $(".content-tabs").outerWidth(true) - tabOuterWidth;
         //实际滚动宽度
         var scrollVal = 0;
-        if ($(".page-tabs-content").outerWidth() < visibleWidth) {
+        if ($(".Page-tabs-content").outerWidth() < visibleWidth) {
             scrollVal = 0;
         } else if (marginRightVal <= (visibleWidth - $(element).outerWidth(true) - $(element).next().outerWidth(true))) {
             if ((visibleWidth - $(element).next().outerWidth(true)) > marginRightVal) {
                 scrollVal = marginLeftVal;
                 var tabElement = element;
-                while ((scrollVal - $(tabElement).outerWidth()) > ($(".page-tabs-content").outerWidth() - visibleWidth)) {
+                while ((scrollVal - $(tabElement).outerWidth()) > ($(".Page-tabs-content").outerWidth() - visibleWidth)) {
                     scrollVal -= $(tabElement).prev().outerWidth();
                     tabElement = $(tabElement).prev();
                 }
@@ -107,7 +107,7 @@ $(function() {
         } else if (marginLeftVal > (visibleWidth - $(element).outerWidth(true) - $(element).prev().outerWidth(true))) {
             scrollVal = marginLeftVal - $(element).prev().outerWidth(true);
         }
-        $('.page-tabs-content').animate({
+        $('.Page-tabs-content').animate({
             marginLeft: 0 - scrollVal + 'px'
         },
         "fast");
@@ -115,14 +115,14 @@ $(function() {
 
     //查看左侧隐藏的选项卡
     function scrollTabLeft() {
-        var marginLeftVal = Math.abs(parseInt($('.page-tabs-content').css('margin-left')));
+        var marginLeftVal = Math.abs(parseInt($('.Page-tabs-content').css('margin-left')));
         // 可视区域非tab宽度
         var tabOuterWidth = calSumWidth($(".content-tabs").children().not(".menuTabs"));
         //可视区域tab宽度
         var visibleWidth = $(".content-tabs").outerWidth(true) - tabOuterWidth;
         //实际滚动宽度
         var scrollVal = 0;
-        if ($(".page-tabs-content").width() < visibleWidth) {
+        if ($(".Page-tabs-content").width() < visibleWidth) {
             return false;
         } else {
             var tabElement = $(".menuTab:first");
@@ -140,7 +140,7 @@ $(function() {
                 scrollVal = calSumWidth($(tabElement).prevAll());
             }
         }
-        $('.page-tabs-content').animate({
+        $('.Page-tabs-content').animate({
             marginLeft: 0 - scrollVal + 'px'
         },
         "fast");
@@ -148,14 +148,14 @@ $(function() {
 
     //查看右侧隐藏的选项卡
     function scrollTabRight() {
-        var marginLeftVal = Math.abs(parseInt($('.page-tabs-content').css('margin-left')));
+        var marginLeftVal = Math.abs(parseInt($('.Page-tabs-content').css('margin-left')));
         // 可视区域非tab宽度
         var tabOuterWidth = calSumWidth($(".content-tabs").children().not(".menuTabs"));
         //可视区域tab宽度
         var visibleWidth = $(".content-tabs").outerWidth(true) - tabOuterWidth;
         //实际滚动宽度
         var scrollVal = 0;
-        if ($(".page-tabs-content").width() < visibleWidth) {
+        if ($(".Page-tabs-content").width() < visibleWidth) {
             return false;
         } else {
             var tabElement = $(".menuTab:first");
@@ -171,7 +171,7 @@ $(function() {
             }
             scrollVal = calSumWidth($(tabElement).prevAll());
             if (scrollVal > 0) {
-                $('.page-tabs-content').animate({
+                $('.Page-tabs-content').animate({
                     marginLeft: 0 - scrollVal + 'px'
                 },
                 "fast");
@@ -228,7 +228,7 @@ $(function() {
             });
             
             // 添加选项卡
-            $('.menuTabs .page-tabs-content').append(str);
+            $('.menuTabs .Page-tabs-content').append(str);
             scrollToTab($('.menuTab.active'));
         }
         return false;
@@ -257,9 +257,9 @@ $(function() {
                     }
                 });
 
-                var marginLeftVal = parseInt($('.page-tabs-content').css('margin-left'));
+                var marginLeftVal = parseInt($('.Page-tabs-content').css('margin-left'));
                 if (marginLeftVal < 0) {
-                    $('.page-tabs-content').animate({
+                    $('.Page-tabs-content').animate({
                         marginLeft: (marginLeftVal + currentWidth) + 'px'
                     },
                     "fast");
@@ -321,11 +321,11 @@ $(function() {
 
     //关闭其他选项卡
     function closeOtherTabs() {
-        $('.page-tabs-content').children("[data-id]").not(":first").not(".active").each(function() {
+        $('.Page-tabs-content').children("[data-id]").not(":first").not(".active").each(function() {
             $('.RuoYi_iframe[data-id="' + $(this).data('id') + '"]').remove();
             $(this).remove();
         });
-        $('.page-tabs-content').css("margin-left", "0");
+        $('.Page-tabs-content').css("margin-left", "0");
     }
     $('.tabCloseOther').on('click', closeOtherTabs);
 
@@ -356,7 +356,7 @@ $(function() {
 
     //刷新iframe
     function refreshTab() {
-    	var currentId = $('.page-tabs-content').find('.active').attr('data-id');
+    	var currentId = $('.Page-tabs-content').find('.active').attr('data-id');
     	var target = $('.RuoYi_iframe[data-id="' + currentId + '"]');
         var url = target.attr('src');
         target.attr('src', url).ready();
@@ -380,20 +380,20 @@ $(function() {
     
     // 关闭当前
     $('.tabCloseCurrent').on('click', function () {
-        $('.page-tabs-content').find('.active i').trigger("click");
+        $('.Page-tabs-content').find('.active i').trigger("click");
     });
 
     // 关闭全部
     $('.tabCloseAll').on('click', function() {
-        $('.page-tabs-content').children("[data-id]").not(":first").each(function() {
+        $('.Page-tabs-content').children("[data-id]").not(":first").each(function() {
             $('.RuoYi_iframe[data-id="' + $(this).data('id') + '"]').remove();
             $(this).remove();
         });
-        $('.page-tabs-content').children("[data-id]:first").each(function() {
+        $('.Page-tabs-content').children("[data-id]:first").each(function() {
             $('.RuoYi_iframe[data-id="' + $(this).data('id') + '"]').show();
             $(this).addClass("active");
         });
-        $('.page-tabs-content').css("margin-left", "0");
+        $('.Page-tabs-content').css("margin-left", "0");
     });
     
 });
